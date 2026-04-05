@@ -593,12 +593,32 @@
       width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: grayscale(0.3);
+      filter: grayscale(1);
       transition: filter 0.4s, transform 0.4s;
     }
     .autor-card:hover .autor-foto img {
       filter: grayscale(0);
       transform: scale(1.15);
+    }
+    .autor-foto .autor-hover-img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0;
+      transition: opacity 0.4s, transform 0.4s;
+      filter: grayscale(0);
+    }
+    .autor-card:hover .autor-hover-img {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+    .autor-card:hover .autor-foto img:not(.autor-hover-img) {
+      opacity: 0;
+    }
+    .autor-foto {
+      position: relative;
     }
     .autor-foto-placeholder {
       width: 100%; height: 100%;
@@ -1332,9 +1352,9 @@
       <!-- 1. Christa Stahl -->
       <div class="autor-card reveal">
         <div class="autor-foto">
-          <img src="img/autores/Pili Circle.jpeg" alt="Christa Stahl" style="object-fit: cover; object-position: center 25%; cursor:zoom-in;"
-               onclick="openLightbox('img/autores/Pili blanco y negro.jpeg')"
+          <img src="img/autores/Pili Circle.jpeg" alt="Christa Stahl" style="object-fit: cover; object-position: center 25%;"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
+          <img src="img/autores/Pili Color.jpeg" alt="Christa Stahl" class="autor-hover-img" style="object-fit: cover; object-position: center 25%;" />
         </div>
         <div class="autor-info">
           <p class="autor-nombre">Christa Stahl</p>
@@ -1387,8 +1407,8 @@
       <div class="autor-card reveal">
         <div class="autor-foto">
           <img src="img/autores/Nacho.jpg" alt="Nacho Ruiz Hens"
-               onclick="openLightbox('img/autores/Nacho primer plano blanco y negro.png')" style="cursor:pointer;"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
+          <img src="img/autores/Nacho zoom.jpeg" alt="Nacho Ruiz Hens" class="autor-hover-img" />
         </div>
         <div class="autor-info">
           <p class="autor-nombre">Nacho Ruiz Hens</p>
@@ -1446,8 +1466,8 @@
       <div class="autor-card reveal">
         <div class="autor-foto">
           <img src="img/autores/Santi.jpg" alt="Santiago Pérez Viso"
-               onclick="openLightbox('img/autores/Santi zoom.jpeg')" style="cursor:pointer;"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
+          <img src="img/autores/Santi zoom.jpeg" alt="Santiago Pérez Viso" class="autor-hover-img" />
         </div>
         <div class="autor-info">
           <p class="autor-nombre">Santiago Pérez Viso</p>
@@ -1475,7 +1495,6 @@
       <div class="autor-card reveal">
         <div class="autor-foto">
           <img src="img/autores/sergio-pastrana.jpg" alt="Sergio Giraldo Pastrana"
-               onclick="openLightbox('img/autores/Sergio blanco y negro.jpeg')" style="cursor:pointer;"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
         </div>
         <div class="autor-info">
@@ -1501,6 +1520,7 @@
         <div class="autor-foto">
           <img src="img/autores/Pedro-Emilio.jpg" alt="Pedro-Emilio Ardila"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
+          <img src="img/autores/Pedro-Emilio zoom.jpeg" alt="Pedro-Emilio Ardila" class="autor-hover-img" />
         </div>
         <div class="autor-info">
           <p class="autor-nombre">Pedro-Emilio Ardila</p>
@@ -1527,9 +1547,9 @@
       <!-- 8. Primavera Gómez -->
       <div class="autor-card reveal">
         <div class="autor-foto">
-          <img src="img/autores/Primavera zoom.jpg" alt="Primavera Gómez"
-               onclick="openAutorPopup('img/autores/Primavera.jpeg', 'Primavera Gómez', 'https://primaveragomez.es')" style="cursor:pointer;"
+          <img src="img/autores/Primavera.jpeg" alt="Primavera Gómez"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
+          <img src="img/autores/Primavera zoom.jpg" alt="Primavera Gómez" class="autor-hover-img" />
         </div>
         <div class="autor-info">
           <p class="autor-nombre">Primavera Gómez</p>
