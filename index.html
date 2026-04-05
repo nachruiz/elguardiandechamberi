@@ -588,17 +588,20 @@
       aspect-ratio: 3/2;
       overflow: hidden;
       background: var(--bg3);
+      position: relative;
     }
     .autor-foto img {
       width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
       filter: grayscale(1);
-      transition: filter 0.4s, transform 0.4s;
+      transition: filter 0.4s, transform 0.4s, opacity 0.4s;
+      opacity: 1;
     }
-    .autor-card:hover .autor-foto img {
+    .autor-card:hover .autor-foto img:not(.autor-hover-img) {
       filter: grayscale(0);
       transform: scale(1.15);
+      opacity: 0;
     }
     .autor-foto .autor-hover-img {
       position: absolute;
@@ -613,12 +616,6 @@
     .autor-card:hover .autor-hover-img {
       opacity: 1;
       transform: scale(1.15);
-    }
-    .autor-card:hover .autor-foto img:not(.autor-hover-img) {
-      opacity: 0;
-    }
-    .autor-foto {
-      position: relative;
     }
     .autor-foto-placeholder {
       width: 100%; height: 100%;
@@ -1437,6 +1434,7 @@
         <div class="autor-foto">
           <img src="img/autores/nhora circle.png" alt="Nhora Cárdenas Puyo" style="object-fit: cover; object-position: center 25%;"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
+          <img src="img/autores/nhora color.png" alt="Nhora Cárdenas Puyo" class="autor-hover-img" style="object-fit: cover; object-position: center 25%;" />
         </div>
         <div class="autor-info">
           <p class="autor-nombre">Nhora Cárdenas Puyo</p>
