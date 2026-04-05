@@ -597,7 +597,7 @@
     }
     .autor-card:hover .autor-foto img {
       filter: grayscale(0);
-      transform: scale(1.04);
+      transform: scale(1.15);
     }
     .autor-foto-placeholder {
       width: 100%; height: 100%;
@@ -1520,10 +1520,9 @@
       </div>
 
       <!-- 8. Primavera Gómez -->
-      <div class="autor-card reveal">
+      <div class="autor-card reveal" onclick="window.open('https://primaveragomez.es','_blank')" style="cursor:pointer;">
         <div class="autor-foto">
           <img src="img/autores/Autores Zoom/Primavera zoom.jpg" alt="Primavera Gómez"
-               onclick="openLightbox('img/autores/Autores Zoom/Primavera zoom.jpg')" style="cursor:zoom-in;"
                onerror="this.outerHTML='<div class=&quot;autor-foto-placeholder&quot;>👤</div>'" />
         </div>
         <div class="autor-info">
